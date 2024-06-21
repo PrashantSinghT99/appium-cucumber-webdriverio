@@ -60,10 +60,10 @@ exports.config = {
         'appium:app': path.join(process.cwd(), './app/andriod/Android.SauceLabs.Mobile.Sample.app.2.7.1.apk'),
         "appium:appActivity": "com.swaglabsmobileapp.MainActivity",
         "appium:appPackage": "com.swaglabsmobileapp",
-        'appium:noReset':true,
-        'appium:newCommandTimeout': 240,
+        'appium:noReset':false,
+        'appium:newCommandTimeout': 7200,
         // 'appium:noReset': true,
-        // 'appium:fullReset': false,
+        'appium:fullReset': true,
         // 'appium:dontStopAppOnReset': true,
         // 'appium:newCommandTimeout': 60,
     }],
@@ -131,19 +131,11 @@ exports.config = {
                 address:'127.0.0.1',
                 port:4723
             },
+            command: 'appium',
             logPath:'./'
         }]
     ],
-    // services: [
-    //     [
-    //     'appium',
-    //     {
-    //     args: {
-    //     },
-    //     command: 'appium'
-    //     }
-    //     ]
-    //     ],
+
 
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
