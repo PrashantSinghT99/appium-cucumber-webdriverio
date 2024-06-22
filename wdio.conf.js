@@ -63,10 +63,7 @@ exports.config = {
         "appium:appPackage": "com.swaglabsmobileapp",
         'appium:noReset': false,
         'appium:newCommandTimeout': 7200,
-        // 'appium:noReset': true,
         'appium:fullReset': true,
-        // 'appium:dontStopAppOnReset': true,
-        // 'appium:newCommandTimeout': 60,
     }],
 
 
