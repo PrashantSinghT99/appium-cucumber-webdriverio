@@ -77,6 +77,7 @@ disableWebdriverStepsReporting: true,
 disableWebdriverScreenshotsReporting: true,
 }]],
 
+```
 onComplete: function () {
 const reportError = new Error('Could not generate Allure report')
 const generation = allure(['generate', 'allure-results', '--clean'])
@@ -96,3 +97,4 @@ const generationTimeout = setTimeout(
             })
         })
     }
+```
