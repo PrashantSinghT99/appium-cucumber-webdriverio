@@ -15,8 +15,8 @@ APPLICATION: Android.SauceLabs.Mobile.Sample.app.2.7.1.apk
 
 **PREREQUISITES**
 
-Node.js and npm  \ 
-Java Development Kit (JDK)   \
+Node.js and npm     \ 
+Java Development Kit (JDK)     \
 Android SDK (for Android automation)  \
 Appium  \
 WebdriverIO CLI  \
