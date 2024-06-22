@@ -22,12 +22,15 @@ By setting cucumberOpts as tagExpression: '@validUser' in file wdio.config.js
 
 SPECS in wdio.config.js
 
+```
 specs: [
 './features/**/*.feature'
 ],
+```
 
 CAPABILITIES
 
+```
 capabilities: [{
 // capabilities for local Appium web tests on an Android Emulator
 platformName: 'Android',
@@ -41,9 +44,11 @@ platformName: 'Android',
 'appium:newCommandTimeout': 7200,
 'appium:fullReset': true,
 }],
+```
 
 SERVICES AND LOGGING
 
+```
 services: [
 ['appium', {
 args: {
@@ -54,12 +59,16 @@ command: 'appium',
 logPath: './'
 }]
 ],
+```
 
 STEP DEFINITION
 
 wdio.conf.js in cucumberOpts add below:
 
+```
 require: ['./features/step-definitions/*.js'],
+
+```
 
 REPORTER: ALLURE
 
@@ -71,13 +80,14 @@ npm i allure-commandline
 
 Add below configurations:
 
+
+```
 reporters: ['spec', ['allure', {
 outputDir: 'allure-results',
 disableWebdriverStepsReporting: true,
 disableWebdriverScreenshotsReporting: true,
 }]],
 
-```
 onComplete: function () {
 const reportError = new Error('Could not generate Allure report')
 const generation = allure(['generate', 'allure-results', '--clean'])
