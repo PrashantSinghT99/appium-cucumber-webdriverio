@@ -20,6 +20,11 @@ RUN VIA TAGS
 
 By setting cucumberOpts as tagExpression: '@validUser' in file wdio.config.js
 
+```
+tagExpression: '@validUser',
+
+```
+
 SPECS in wdio.config.js
 
 ```
