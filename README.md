@@ -25,7 +25,7 @@ Git   \
 An IDE (e.g., Visual Studio Code)
 
 
-**COMMAND TO RUN FEATURE FILE**
+**COMMAND TO RUN**
 
 npm install  \
 npx wdio --spec .\features\login.feature
