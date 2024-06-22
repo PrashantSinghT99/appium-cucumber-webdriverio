@@ -1,4 +1,4 @@
-const path=require('path')
+const path = require('path')
 const allure = require('allure-commandline')
 exports.config = {
     //
@@ -61,7 +61,7 @@ exports.config = {
         'appium:app': path.join(process.cwd(), './app/andriod/Android.SauceLabs.Mobile.Sample.app.2.7.1.apk'),
         "appium:appActivity": "com.swaglabsmobileapp.MainActivity",
         "appium:appPackage": "com.swaglabsmobileapp",
-        'appium:noReset':false,
+        'appium:noReset': false,
         'appium:newCommandTimeout': 7200,
         // 'appium:noReset': true,
         'appium:fullReset': true,
@@ -146,13 +146,13 @@ exports.config = {
     //     }]
     // ],
     services: [
-        ['appium',{
-            args:{
-                address:'127.0.0.1',
-                port:4723
+        ['appium', {
+            args: {
+                address: '127.0.0.1',
+                port: 4723
             },
             command: 'appium',
-            logPath:'./'
+            logPath: './'
         }]
     ],
 
@@ -164,7 +164,7 @@ exports.config = {
     // Make sure you have the wdio adapter package for the specific framework installed
     // before running any tests.
     framework: 'cucumber',
-    
+
     //
     // The number of times to retry the entire specfile when it fails as a whole
     // specFileRetries: 1,
@@ -178,7 +178,7 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: ['spec',['allure', {
+    reporters: ['spec', ['allure', {
         outputDir: 'allure-results',
         disableWebdriverStepsReporting: true,
         disableWebdriverScreenshotsReporting: true,
@@ -205,14 +205,14 @@ exports.config = {
         // <boolean> fail if there are any undefined or pending steps
         strict: false,
         // <string> (expression) only execute the features or scenarios with tags matching the expression
-        tagExpression: '@valid',
+        tagExpression: '@lockedUser',
         // <number> timeout for step definitions
         timeout: 60000,
         // <boolean> Enable this config to treat undefined definitions as warnings.
         ignoreUndefinedDefinitions: false
     },
 
-    onComplete: function() {
+    onComplete: function () {
         const reportError = new Error('Could not generate Allure report')
         const generation = allure(['generate', 'allure-results', '--clean'])
         return new Promise((resolve, reject) => {
@@ -220,7 +220,7 @@ exports.config = {
                 () => reject(reportError),
                 5000)
 
-            generation.on('exit', function(exitCode) {
+            generation.on('exit', function (exitCode) {
                 clearTimeout(generationTimeout)
 
                 if (exitCode !== 0) {
@@ -357,7 +357,7 @@ exports.config = {
      */
     // afterFeature: function (uri, feature) {
     // },
-    
+
     /**
      * Runs after a WebdriverIO command gets executed
      * @param {string} commandName hook command name
@@ -413,5 +413,5 @@ exports.config = {
     */
     // afterAssertion: function(params) {
     // }
-    
+
 }
