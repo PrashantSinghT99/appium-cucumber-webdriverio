@@ -1,42 +1,29 @@
 const { Given, When, Then } = require('@wdio/cucumber-framework');
-const { $, expect } = require('@wdio/globals');
+const loginPage = require('../pageobjects/login.page');
 
 Given(/^I am on the login page$/, async function () {
-    console.log('Application launched');
+    await loginPage.open();
 });
 
 When(/^I enter the username (.*)$/, async function (username) {
-    const usernameField = await $('~test-Username');
-    await usernameField.setValue(username);
+    await loginPage.enterUsername(username);
 });
 
-
-Then(/^I enter the password (.*)$/, async function (password) {
-    const passwordField = await $('~test-Password');
-    await passwordField.setValue(password);
+When(/^I enter the password (.*)$/, async function (password) {
+    await loginPage.enterPassword(password);
 });
 
-Then(/^I click the login button$/, async function () {
-    const loginButton = await $('~test-LOGIN');
-    await loginButton.click();
+When(/^I click the login button$/, async function () {
+    await loginPage.clickLoginButton();
 });
-
 
 Then(/^I validate product screen visible$/, async function () {
-    const actual = await $("//android.widget.TextView[@text='PRODUCTS']");
-    await expect(actual).toBeExisting();
+    const isVisible = await loginPage.isProductScreenVisible();
+    await expect(isVisible).toBe(true);
 });
 
-
 Then(/^I should see the error message (.*)$/, async function (message) {
-    // Locate the error message element using XPath
-    //const errorMessageElement = await $('//android.widget.TextView[@text="Username and password do not match any user in this service."]');
-    const errorMessageElement = await $(`//android.widget.TextView[@text="${message}"]`);
-
-    // Get the text content of the error message element
-    const errorMessageText = await errorMessageElement.getText();
+    const errorMessageText = await loginPage.getErrorMessage(message);
     console.log('Error message:', errorMessageText);
-
-    // Assert that the error message text is as expected
     expect(errorMessageText).toBe(message);
 });

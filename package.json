@@ -7,11 +7,18 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "wdio": "wdio run ./wdio.conf.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "appium",
+    "javascript",
+    "webdriverio",
+    "bdd",
+    "pom"
+  ],
+  "author": "Prashant Singh",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^20.14.7",
+    "@wdio/allure-reporter": "^8.39.0",
     "@wdio/appium-service": "^8.39.0",
     "@wdio/cli": "^8.39.0",
     "@wdio/cucumber-framework": "^8.39.0",
@@ -25,6 +32,7 @@
   "dependencies": {
     "@cucumber/cucumber": "^10.8.0",
     "@wdio/globals": "^8.39.0",
+    "allure-commandline": "^2.29.0",
     "cucumber": "^6.0.7"
   }
 }

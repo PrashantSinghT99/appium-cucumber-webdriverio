@@ -1,4 +1,5 @@
 const path=require('path')
+const allure = require('allure-commandline')
 exports.config = {
     //
     // ====================
@@ -68,6 +69,25 @@ exports.config = {
         // 'appium:newCommandTimeout': 60,
     }],
 
+
+    // beforeSession: function (config, capabilities, specs) {
+    //     // Start the Appium server before the test session
+    //     appiumProcess = exec('appium', (error, stdout, stderr) => {
+    //         if (error) {
+    //             console.error(`Appium error: ${error}`);
+    //             return;
+    //         }
+    //         console.log(`Appium stdout: ${stdout}`);
+    //         console.error(`Appium stderr: ${stderr}`);
+    //     });
+    // },
+
+    // afterSession: function (config, capabilities, specs) {
+    //     // Stop the Appium server after the test session
+    //     if (appiumProcess) {
+    //         appiumProcess.kill('SIGINT');
+    //     }
+    // },
 
     //
     // ===================
@@ -158,7 +178,11 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: ['spec'],
+    reporters: ['spec',['allure', {
+        outputDir: 'allure-results',
+        disableWebdriverStepsReporting: true,
+        disableWebdriverScreenshotsReporting: true,
+    }]],
 
     // If you are using Cucumber you need to specify the location of your step definitions.
     cucumberOpts: {
@@ -181,14 +205,38 @@ exports.config = {
         // <boolean> fail if there are any undefined or pending steps
         strict: false,
         // <string> (expression) only execute the features or scenarios with tags matching the expression
-        tagExpression: '@usernameNoPassword',
+        tagExpression: '@valid',
         // <number> timeout for step definitions
         timeout: 60000,
         // <boolean> Enable this config to treat undefined definitions as warnings.
         ignoreUndefinedDefinitions: false
     },
 
+    onComplete: function() {
+        const reportError = new Error('Could not generate Allure report')
+        const generation = allure(['generate', 'allure-results', '--clean'])
+        return new Promise((resolve, reject) => {
+            const generationTimeout = setTimeout(
+                () => reject(reportError),
+                5000)
 
+            generation.on('exit', function(exitCode) {
+                clearTimeout(generationTimeout)
+
+                if (exitCode !== 0) {
+                    return reject(reportError)
+                }
+
+                console.log('Allure report successfully generated')
+                resolve()
+            })
+        })
+    }
+    // afterStep: async function (step, scenario, { error, duration, passed }, context) {
+    //     if (error) {
+    //       await browser.takeScreenshot();
+    //     }
+    //   }
     //
     // =====
     // Hooks
@@ -365,4 +413,5 @@ exports.config = {
     */
     // afterAssertion: function(params) {
     // }
+    
 }

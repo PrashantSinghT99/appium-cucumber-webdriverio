@@ -1,0 +1,7 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Sat Jun 22 12:17:40 IST 2024","Sat Jun 22 12:17:43 IST 2024","2456","","Login to SauceLabs mobile application: Valid username and password","","","","When I enter the username standard_user",""
+"failed","Sat Jun 22 12:17:46 IST 2024","Sat Jun 22 12:17:46 IST 2024","1","","","","","","hook:",""
+"passed","Sat Jun 22 12:17:43 IST 2024","Sat Jun 22 12:17:44 IST 2024","1594","","Login to SauceLabs mobile application: Valid username and password","","","","Then I enter the password secret_sauce",""
+"passed","Sat Jun 22 12:17:40 IST 2024","Sat Jun 22 12:17:40 IST 2024","6","","Login to SauceLabs mobile application: Valid username and password","","","","Given I am on the login page",""
+"passed","Sat Jun 22 12:17:45 IST 2024","Sat Jun 22 12:17:46 IST 2024","1217","","Login to SauceLabs mobile application: Valid username and password","","","","Then I validate product screen visible",""
+"passed","Sat Jun 22 12:17:44 IST 2024","Sat Jun 22 12:17:45 IST 2024","622","","Login to SauceLabs mobile application: Valid username and password","","","","Then I click the login button",""

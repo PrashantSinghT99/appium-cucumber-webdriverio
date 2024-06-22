@@ -22,7 +22,7 @@ Feature: Login to SauceLabs mobile application
     Then I should see the error message <message>
 
     Examples:
-      | username      | password     | message                                                      |
+      | username          | password | message                                                      |
       | alice@example.com | 10203040 | Username and password do not match any user in this service. |
 
   @noCredentials
