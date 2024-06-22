@@ -30,10 +30,13 @@ An IDE (e.g., Visual Studio Code)
 npm install  \
 npx wdio --spec .\features\login.feature
 
-Note:  \ 
-1)Device/Emulator running  \
-2)Port 4723 is not occupied by any other process or service  \
-Command to check which process running on port and stop it.  \
+Note:  
+
+1)Device/Emulator running  
+
+2)Port 4723 is not occupied by any other process or service 
+
+Command to check which process running on port and stop it. 
 
 ```
 netstat -ano | findstr :4723 
