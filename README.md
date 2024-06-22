@@ -11,6 +11,21 @@ DEVICE: PIXEL XL GOOGLE  \
 VERSION: ANDRIOD 13 TIRAMISU  \
 APPLICATION: Android.SauceLabs.Mobile.Sample.app.2.7.1.apk 
 
+
+
+**PREREQUISITES**
+
+Node.js and npm  \ 
+Java Development Kit (JDK)   \
+Android SDK (for Android automation)  \
+Appium  \
+WebdriverIO CLI  \
+Drivers (e.g., UI Automator 2)  \
+Git   \
+An IDE (e.g., Visual Studio Code)
+
+
+
 **COMMAND TO RUN FEATURE FILE**
 
 npx wdio --spec .\features\login.feature
