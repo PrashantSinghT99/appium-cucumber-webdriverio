@@ -5,52 +5,52 @@ Feature: Login to SauceLabs mobile application
 
   @validUser
   Scenario Outline: Valid username and password
-    When I enter the username <username>
-    Then I enter the password <password>
+    When I enter the username STANDARD_USER
+    Then I enter the password STANDARD_USER
     Then I click the login button
     Then I validate product screen visible
 
     Examples:
-      | username      | password     |
-      | standard_user | secret_sauce |
+      | username       | password      |
+      | STANDARD_USER  | STANDARD_USER |
 
   @invalidUser
   Scenario Outline: Invalid username and password
-    When I enter the username <username>
-    Then I enter the password <password>
+    When I enter the username INVALID_USER
+    Then I enter the password INVALID_USER
     Then I click the login button
-    Then I should see the error message <message>
+    Then I should see the error message INVALID_USER
 
     Examples:
-      | username          | password | message                                                      |
-      | alice@example.com | 10203040 | Username and password do not match any user in this service. |
+      | username      | password      | message       |
+      | INVALID_USER  | INVALID_USER  | INVALID_USER  |
 
   @lockedUser
   Scenario Outline: Locked username and password
-    When I enter the username <username>
-    Then I enter the password <password>
+    When I enter the username LOCKED_USER
+    Then I enter the password LOCKED_USER
     Then I click the login button
-    Then I should see the error message <message>
+    Then I should see the error message LOCKED_USER
 
     Examples:
-      | username        | password     | message                               |
-      | locked_out_user | secret_sauce | Sorry, this user has been locked out. |
+      | username      | password      | message      |
+      | LOCKED_USER   | LOCKED_USER   | LOCKED_USER  |
 
   @noCredentials
   Scenario Outline: Validate no username and no password
     When I click the login button
-    Then I should see the error message <message>
+    Then I should see the error message NO_CREDENTIALS
 
     Examples:
-      | message              |
-      | Username is required |
+      | message         |
+      | NO_CREDENTIALS  |
 
   @usernameNoPassword
   Scenario Outline: Validate enter username but no password
-    When I enter the username <username>
+    When I enter the username NO_PASSWORD
     Then I click the login button
-    Then I should see the error message <message>
+    Then I should see the error message NO_PASSWORD
 
     Examples:
-      | username        | message              |
-      | bob@example.com | Password is required |
+      | username       | message       |
+      | NO_PASSWORD    | NO_PASSWORD   |
