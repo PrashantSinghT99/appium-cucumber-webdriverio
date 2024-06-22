@@ -1,4 +1,4 @@
-TECH STACK USED(latest versions)
+**TECH STACK USED(latest versions)**
 
 APPIUM 2.10.3  \
 WEBDRIVER IO 8.39.0  \
@@ -6,17 +6,16 @@ NODE 20.10.0  \
 JAVASCRIPT  \
 CUCUMBER 8.39.0  \
 ANDRIOD STUDIO 2023  \
-APPIUM INSPECTOR 2023 
-
+APPIUM INSPECTOR 2023 \
 DEVICE: PIXEL XL GOOGLE  \
 VERSION: ANDRIOD 13 TIRAMISU  \
 APPLICATION: Android.SauceLabs.Mobile.Sample.app.2.7.1.apk 
 
-COMMAND TO RUN FEATURE FILE
+**COMMAND TO RUN FEATURE FILE**
 
 npx wdio --spec .\features\login.feature
 
-RUN VIA TAGS
+**RUN VIA TAGS**
 
 By setting cucumberOpts as tagExpression: '@validUser' in file wdio.config.js
 
@@ -25,7 +24,7 @@ tagExpression: '@validUser',
 
 ```
 
-SPECS in wdio.config.js
+**SPECS in wdio.config.js**
 
 ```
 specs: [
@@ -33,7 +32,7 @@ specs: [
 ],
 ```
 
-CAPABILITIES
+**CAPABILITIES**
 
 ```
 capabilities: [{
@@ -51,7 +50,7 @@ platformName: 'Android',
 }],
 ```
 
-SERVICES AND LOGGING
+**SERVICES AND LOGGING**
 
 ```
 services: [
@@ -66,7 +65,7 @@ logPath: './'
 ],
 ```
 
-STEP DEFINITION
+**STEP DEFINITION**
 
 wdio.conf.js in cucumberOpts add below:
 
@@ -75,7 +74,7 @@ require: ['./features/step-definitions/*.js'],
 
 ```
 
-REPORTER: ALLURE
+**REPORTER: ALLURE**
 
 docs:https://webdriver.io/docs/allure-reporter/
 
