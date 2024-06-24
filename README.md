@@ -13,7 +13,7 @@
     │   ├── stepDefinitions(Step definitions of feature file to page Objects)
     │   └── login.feature(Gherkin BDD cucumber)
     ├── testdata/
-    │   └── testdata.js(Separated dynamice testdata logic)
+    │   └── testdata.js(Separated dynamic testdata logic)
     ├── .gitignore
     ├── LICENSE
     ├── README.md
