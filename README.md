@@ -1,3 +1,29 @@
+**HIERARCHY**
+
+```
+.
+└── appium-webdriverio-cucumber/
+    ├── allure-reports(contains report after test execution)/
+    │   └── index.html(open with browser)
+    ├── app/
+    │   └── andriod/
+    │       └── application.apk(android apk used)
+    ├── features/
+    │   ├── pageObjects(Page specific pom classes)
+    │   ├── stepDefinitions(Step definitions of feature file to page Objects)
+    │   └── login.feature(Gherkin BDD cucumber)
+    ├── testdata/
+    │   └── testdata.js(Separated dynamice testdata logic)
+    ├── .gitignore
+    ├── LICENSE
+    ├── README.md
+    ├── package-lock.json
+    └── package.json
+
+
+```
+
+
 **TECH STACK USED(latest versions)**
 
 APPIUM 2.10.3  \
