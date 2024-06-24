@@ -1,3 +1,29 @@
+**FOLDER STRUCTURE HIERARCHY**
+
+```
+.
+└── appium-webdriverio-cucumber/
+    ├── allure-reports(contains report after test execution)/
+    │   └── index.html(open with browser)
+    ├── app/
+    │   └── andriod/
+    │       └── application.apk(android apk used)
+    ├── features/
+    │   ├── pageObjects(Page specific pom classes)
+    │   ├── stepDefinitions(Step definitions of feature file to page Objects)
+    │   └── login.feature(Gherkin BDD cucumber)
+    ├── testdata/
+    │   └── testdata.js(Separated dynamic testdata logic)
+    ├── .gitignore
+    ├── LICENSE
+    ├── README.md
+    ├── package-lock.json
+    └── package.json
+
+
+```
+
+
 **TECH STACK USED(latest versions)**
 
 APPIUM 2.10.3  \
@@ -27,12 +53,26 @@ An IDE (e.g., Visual Studio Code)
 
 **COMMAND TO RUN**
 
-npm install  \
+```
+npm install
+```
+
+**Run all testcases**
+
+```
+npx wdio wdio.conf.js
+```
+**Run individually**
+
+```
 npx wdio --spec .\features\login.feature
+```
 
 **Run from tags directly from CLI**
 
+```
 npx wdio wdio.conf.js --cucumberOpts.tagExpression='@yourTag'
+```
 
 Note:  
 
