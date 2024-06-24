@@ -191,5 +191,15 @@ const generationTimeout = setTimeout(
 
 https://github.com/PrashantSinghT99/appium-webdriverio-cucumber/assets/52065013/8970cdef-7ce0-49fc-a5d9-f311da55ef81
 
+**TAGS EXECUTION**
+
+https://github.com/PrashantSinghT99/appium-webdriverio-cucumber/assets/52065013/afd22b93-474b-49c5-a265-409e983a7bb4
+
+**REPORTS**
+
+https://github.com/PrashantSinghT99/appium-webdriverio-cucumber/assets/52065013/d2ee6df5-36b5-4a2f-a296-714172d414b9
+
+
+
 
 
