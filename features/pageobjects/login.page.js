@@ -28,15 +28,14 @@ class LoginPage {
     }
     // Method to check if the product screen is visible
     async isProductScreenText() {
-        const productScreen=await $("//android.widget.TextView[@text='PRODUCTS']");
-        const productTxt=await productScreen.getText();
-        console.log("pom text",productTxt);
+        const productScreen = await $("//android.widget.TextView[@text='PRODUCTS']");
+        const productTxt = await productScreen.getText();
         return productTxt;
     }
     // Method to get the error message text based on the provided message
     async getErrorMessage(message) {
         // Locate the error message element based on the provided message text
-      
+
         const errorMessageElement = await $(`//android.widget.TextView[@text="${message}"]`);
         // Return the text of the error message element
         return await errorMessageElement.getText();

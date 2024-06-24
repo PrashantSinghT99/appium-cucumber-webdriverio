@@ -23,7 +23,6 @@ When(/^I click the login button$/, async function () {
 // Step definition for validating that the product screen is visible
 Then(/^I validate product screen visible$/, async function () {
     const text = await loginPage.isProductScreenText();
-    console.log("step text",text);
     await expect(text).toContain('PRODUCTS');
 });
 // Step definition for verifying the error message
