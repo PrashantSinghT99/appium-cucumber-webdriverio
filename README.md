@@ -186,3 +186,10 @@ const generationTimeout = setTimeout(
         })
     }
 ```
+
+**EXECUTION**
+
+https://github.com/PrashantSinghT99/appium-webdriverio-cucumber/assets/52065013/8970cdef-7ce0-49fc-a5d9-f311da55ef81
+
+
+
