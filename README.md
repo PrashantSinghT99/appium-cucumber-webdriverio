@@ -54,6 +54,13 @@ An IDE (e.g., Visual Studio Code)
 **COMMAND TO RUN**
 
 npm install  \
+
+**Run all testcases**
+
+npx wdio wdio.conf.js
+
+**Run individually**
+
 npx wdio --spec .\features\login.feature
 
 **Run from tags directly from CLI**
