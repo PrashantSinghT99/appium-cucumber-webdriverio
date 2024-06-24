@@ -52,6 +52,7 @@ exports.config = {
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
     //
+   
     capabilities: [{
         // capabilities for local Appium web tests on an Android Emulator
         platformName: 'Android',
@@ -62,11 +63,18 @@ exports.config = {
         "appium:appActivity": "com.swaglabsmobileapp.MainActivity",
         "appium:appPackage": "com.swaglabsmobileapp",
         'appium:noReset': false,
-        'appium:newCommandTimeout': 7200,
+        'appium:newCommandTimeout': 300,
         'appium:fullReset': true,
     }],
 
-
+    // beforeScenario: async function () {
+    //     // Code to reset the app
+    //     await driver.reset();
+    // },
+    // afterScenario: async function () {
+    //     // Code to close the app
+        
+    // },
     // beforeSession: function (config, capabilities, specs) {
     //     // Start the Appium server before the test session
     //     appiumProcess = exec('appium', (error, stdout, stderr) => {
@@ -127,7 +135,7 @@ exports.config = {
     connectionRetryTimeout: 120000,
     //
     // Default request retries count
-    connectionRetryCount: 3,
+    connectionRetryCount: 5,
     //
     // Test runner services
     // Services take over a specific job you don't want to take care of. They enhance
@@ -202,7 +210,7 @@ exports.config = {
         // <boolean> fail if there are any undefined or pending steps
         strict: false,
         // <string> (expression) only execute the features or scenarios with tags matching the expression
-        tagExpression: '@validUser',
+        tagExpression: '',
         // <number> timeout for step definitions
         timeout: 60000,
         // <boolean> Enable this config to treat undefined definitions as warnings.
@@ -215,7 +223,7 @@ exports.config = {
         return new Promise((resolve, reject) => {
             const generationTimeout = setTimeout(
                 () => reject(reportError),
-                5000)
+                8000)
 
             generation.on('exit', function (exitCode) {
                 clearTimeout(generationTimeout)

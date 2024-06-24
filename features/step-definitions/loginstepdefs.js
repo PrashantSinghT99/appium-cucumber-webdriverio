@@ -12,6 +12,7 @@ When(/^I enter the username (.*)$/, async function (usernameKey) {
 });
 // Step definition for entering the password
 When(/^I enter the password (.*)$/, async function (passwordKey) {
+
     const password = LOGIN_USERS[passwordKey.toUpperCase()].password;
     await loginPage.enterPassword(password);
 });
@@ -21,8 +22,9 @@ When(/^I click the login button$/, async function () {
 });
 // Step definition for validating that the product screen is visible
 Then(/^I validate product screen visible$/, async function () {
-    const isVisible = await loginPage.isProductScreenVisible();
-    await expect(isVisible).toBe(true);
+    const text = await loginPage.isProductScreenText();
+    console.log("step text",text);
+    await expect(text).toContain('PRODUCTS');
 });
 // Step definition for verifying the error message
 Then(/^I should see the error message (.*)$/, async function (messageKey) {
