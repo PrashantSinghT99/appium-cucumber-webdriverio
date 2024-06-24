@@ -15,8 +15,8 @@ APPLICATION: Android.SauceLabs.Mobile.Sample.app.2.7.1.apk
 
 **PREREQUISITES**
 
-Node.js and npm  \ 
-Java Development Kit (JDK)   \
+Node.js and npm                                 
+Java Development Kit (JDK)     \
 Android SDK (for Android automation)  \
 Appium  \
 WebdriverIO CLI  \
@@ -29,6 +29,10 @@ An IDE (e.g., Visual Studio Code)
 
 npm install  \
 npx wdio --spec .\features\login.feature
+
+**Run from tags directly from CLI**
+
+npx wdio wdio.conf.js --cucumberOpts.tagExpression='@yourTag'
 
 Note:  
 
@@ -49,6 +53,7 @@ taskkill /PID <PID> /F
 By setting cucumberOpts as tagExpression: '@validUser' in file wdio.config.js
 
 ```
+
 tagExpression: '@validUser',
 
 ```
